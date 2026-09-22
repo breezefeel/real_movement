@@ -47,8 +47,8 @@
     },
     {
       id: "incheon",
-      name: "인천점",
-      short: "인천·작전",
+      name: "인천 계양점",
+      short: "인천 계양",
       directors: "대표원장 박준규",
       team: "1:1 근골격 · 기능 트레이닝",
       address: "인천광역시 계양구 봉오대로651번길 9, 힐스테이트자이(계양) 1층 커뮤니티",
@@ -65,10 +65,10 @@
   const PAGES = [
     { t: "홈", h: "index.html", k: "소개 지점 상담" },
     { t: "왜 리얼무브먼트인가", h: "about.html", k: "소개 about" },
-    { t: "원장 소개", h: "directors.html", k: "최홍택 김인준 박준규 원장" },
+    { t: "원장 소개", h: "directors.html", k: "최홍택 김인준 박준규 원장 대표" },
     { t: "강사진", h: "instructors.html", k: "물리치료사 강사" },
-    { t: "평가 과정", h: "evaluation.html", k: "체형검사 4DEYE 움직임" },
-    { t: "프로그램", h: "programs.html", k: "자세교정 기능재활" },
+    { t: "평가 과정", h: "evaluation.html", k: "체형검사 움직임 촉진 4DEYE" },
+    { t: "프로그램 한눈에", h: "programs.html", k: "자세교정 기능재활" },
     { t: "자세교정 프로그램", h: "program-posture.html", k: "거북목 스웨이백 골반" },
     { t: "기능재활 프로그램", h: "program-conditioning.html", k: "어깨 허리 무릎 고관절" },
     { t: "전후 변화", h: "before-after.html", k: "before after 결과" },
@@ -76,7 +76,7 @@
     { t: "성수본점", h: "branch-seongsu.html", k: "성수" },
     { t: "역삼한티점", h: "branch-yeoksam.html", k: "역삼 한티" },
     { t: "약수점", h: "branch-yaksu.html", k: "약수" },
-    { t: "인천점", h: "branch-incheon.html", k: "인천 작전 계양" },
+    { t: "인천 계양점", h: "branch-incheon.html", k: "인천 작전 계양" },
     { t: "오시는 길 · 예약", h: "contact.html", k: "연락처 전화 예약" },
     { t: "자주 묻는 질문", h: "faq.html", k: "faq 상담" },
     { t: "채용", h: "recruiting.html", k: "구인 강사" }
@@ -95,6 +95,7 @@
             '<button class="icon-btn" type="button" data-open-search aria-label="검색">' +
               '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="1.8"/></svg>' +
             '</button>' +
+            '<a class="lang-link" href="english.html">EN</a>' +
           '</div>' +
         '</div>' +
         '<div class="search-panel" id="search-panel">' +
@@ -110,28 +111,24 @@
           '<button class="icon-btn" type="button" data-close-nav aria-label="닫기">✕</button></div>' +
         navBlock("소개", [
           ["about.html", "왜 리얼무브먼트인가"],
-          ["instructors.html", "강사진"],
-          ["directors.html", "원장 소개"]
+          ["directors.html", "대표 원장"],
+          ["instructors.html", "강사진"]
         ], page) +
         navBlock("평가 · 프로그램", [
           ["evaluation.html", "평가 과정"],
           ["programs.html", "프로그램 한눈에"],
-          ["program-posture.html", "자세교정 프로그램"],
-          ["program-conditioning.html", "기능재활 프로그램"],
           ["before-after.html", "전후 변화"]
         ], page) +
         navBlock("지점", [
           ["branch-seongsu.html", "성수본점"],
           ["branch-yeoksam.html", "역삼한티점"],
           ["branch-yaksu.html", "약수점"],
-          ["branch-incheon.html", "인천점"],
-          ["contact.html", "오시는 길 · 예약"]
+          ["branch-incheon.html", "인천 계양점"]
         ], page) +
         navBlock("콘텐츠", [
           ["columns.html", "칼럼"],
           ["faq.html", "자주 묻는 질문"],
-          ["recruiting.html", "채용"],
-          ["english.html", "English"]
+          ["recruiting.html", "채용"]
         ], page) +
       '</aside>'
     );
@@ -146,36 +143,25 @@
   }
 
   function footer() {
-    var phones = BRANCHES.map(function (b) {
-      var label = { seongsu: "성수", yeoksam: "역삼", yaksu: "약수", incheon: "인천" }[b.id] || b.short;
-      return '<a href="tel:' + b.tel + '"><b>' + label + '</b> ' + b.phone + '</a>';
-    }).join("");
     return (
       '<p class="disclaimer">리얼무브먼트는 운동·웰니스 프로그램입니다. 급성 통증, 마비, 최근 수술 직후라면 병원 진료를 먼저 권합니다.</p>' +
       '<footer class="site-footer"><div class="wrap">' +
-        '<div class="foot-grid">' +
-          '<div class="foot-brand"><h4>REAL MOVEMENT</h4>' +
-            '<div>기능성 트레이닝 전문 스튜디오 · 성수 · 역삼한티 · 약수 · 인천</div>' +
-            '<div class="sns-row">' +
-              '<a href="https://www.instagram.com/real_movement_official/" target="_blank" rel="noopener">Instagram</a>' +
-              '<a href="http://pf.kakao.com/_qFmxixj/chat" target="_blank" rel="noopener">카카오</a>' +
-              '<a href="https://talk.naver.com/ct/wc56be" target="_blank" rel="noopener">네이버 톡톡</a>' +
-            '</div>' +
-          '</div>' +
-          '<div><h4>바로가기</h4>' +
-            '<div class="foot-links">' +
-              '<a href="instructors.html">강사진</a>' +
-              '<a href="evaluation.html">평가</a>' +
-              '<a href="faq.html">FAQ</a>' +
-              '<a href="contact.html">예약</a>' +
-              '<a href="recruiting.html">채용</a>' +
-            '</div>' +
-          '</div>' +
-          '<div><h4>상담 전화</h4>' +
-            '<div class="foot-phones">' + phones + '</div>' +
+        '<div class="foot-brand"><h4>REAL MOVEMENT</h4>' +
+          '<div>기능성 트레이닝 전문 스튜디오 · 성수 · 역삼한티 · 약수 · 인천</div>' +
+          '<div class="sns-row">' +
+            '<a href="https://www.instagram.com/real_movement_official/" target="_blank" rel="noopener">Instagram</a>' +
+            '<a href="http://pf.kakao.com/_qFmxixj/chat" target="_blank" rel="noopener">카카오</a>' +
+            '<a href="https://talk.naver.com/ct/wc56be" target="_blank" rel="noopener">네이버 톡톡</a>' +
           '</div>' +
         '</div>' +
-        '<div class="legal">메드넥스 — 리얼무브먼트 · 238-87-03980 · mednex@naver.com · © 2026</div>' +
+        '<div class="legal">' +
+          '상호 메드넥스 — 리얼무브먼트<br>' +
+          '대표자 김인준 · 최홍택<br>' +
+          '사업자등록번호 238-87-03980<br>' +
+          '사업장 서울 성동구 성수일로8길 39, 3층<br>' +
+          '이메일 <a href="mailto:mednex@naver.com">mednex@naver.com</a><br>' +
+          '© 2026' +
+        '</div>' +
       '</div></footer>' +
       '<a class="float-chat is-kakao" href="http://pf.kakao.com/_qFmxixj/chat" target="_blank" rel="noopener" aria-label="카카오 상담">상담</a>'
     );
@@ -234,14 +220,14 @@
             '<div class="actions">' +
               '<a class="btn btn-primary" href="' + b.book + '" target="_blank" rel="noopener">네이버 예약</a>' +
               '<a class="btn btn-line" href="' + b.map + '" target="_blank" rel="noopener">지도</a>' +
-              '<a class="btn btn-line" href="' + b.page + '">지점 소개</a>' +
+              '<a class="btn btn-line" href="' + b.page + '">소개</a>' +
             "</div></article>"
         );
       }).join("");
     },
     branchChips: function () {
       return BRANCHES.map(function (b) {
-        return '<a class="branch-chip" href="' + b.page + '"><b>' + b.name + "</b><span>" + b.near + "<br>" + b.phone + "</span></a>";
+        return '<a class="branch-chip" href="' + b.page + '"><b>' + b.name + "</b></a>";
       }).join("");
     }
   };
